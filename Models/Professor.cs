@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace EstudosApi.Models
 {
-    public class Aluno
+    public class Professor
     {
-
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public DateTime DtaNascimento { get; set; }
-        public List<Matricula> Matricula { get; set; } = new List<Matricula>();
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public string Email { get; set; }
@@ -23,8 +21,7 @@ namespace EstudosApi.Models
         [NotMapped]
         public string PassowordString { get; set; }
 
-
-
+        public List<Materia> Materias { get; set; }
 
     }
 }

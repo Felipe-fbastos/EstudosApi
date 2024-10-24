@@ -15,6 +15,8 @@ namespace EstudosApi.Models
         public DateTime DataCriacao { get; set; }
         public StatusMateria StatusMateria { get; set; }
         public List<Matricula> Matricula { get; set; } = new List<Matricula>();
+        public int IdProfessor { get; set; }
+        public Professor Professor { get; set; } = null;
         
     }
 }
