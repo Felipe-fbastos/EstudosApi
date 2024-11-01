@@ -13,7 +13,7 @@ namespace EstudosApi.Controllers
     {
         private static List<Aluno> alunos = new List<Aluno>(){
             new Aluno(){Id=1,Nome="Felipe", Cpf="12345678911"},
-            new Aluno(){Id=1,Nome="Rebecca", Cpf="12345678917"}
+            new Aluno(){Id=2,Nome="Rebecca", Cpf="12345678917"}
         };
 
         [HttpGet("GetAll")]

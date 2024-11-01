@@ -7,7 +7,7 @@ using EstudosApi.Models.Enuns;
 namespace EstudosApi.Models
 {
     public class Materia
-    {
+    {/*
         public int Id { get; set; }
         public string Nome { get; set; }
         public int HorasDoCurso { get; set; }
@@ -17,6 +17,6 @@ namespace EstudosApi.Models
         public List<Matricula> Matricula { get; set; } = new List<Matricula>();
         public int IdProfessor { get; set; }
         public Professor Professor { get; set; } = null;
-        
+        */
     }
 }

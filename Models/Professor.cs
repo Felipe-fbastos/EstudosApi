@@ -8,7 +8,7 @@ namespace EstudosApi.Models
 {
     public class Professor
     {
-        public int Id { get; set; }
+/*        public int Id { get; set; }
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public DateTime DtaNascimento { get; set; }
@@ -22,6 +22,6 @@ namespace EstudosApi.Models
         public string PassowordString { get; set; }
 
         public List<Materia> Materias { get; set; }
-
+*/
     }
 }

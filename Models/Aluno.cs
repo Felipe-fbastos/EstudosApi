@@ -12,10 +12,10 @@ namespace EstudosApi.Models
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public DateTime DtaNascimento { get; set; }
-        public List<Matricula> Matricula { get; set; } = new List<Matricula>();
+       // public List<Matricula> Matricula { get; set; } = new List<Matricula>();
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-        public string Email { get; set; }
+        public string? Email { get; set; }
         public byte[]? PasswordHash { get; set; }
         public byte[]? PasswordSalt { get; set; }
 
