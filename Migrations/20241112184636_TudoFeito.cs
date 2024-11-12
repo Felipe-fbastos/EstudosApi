@@ -5,7 +5,7 @@
 namespace EstudosApi.Migrations
 {
     /// <inheritdoc />
-    public partial class TB_ALUNOS : Migration
+    public partial class TudoFeito : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

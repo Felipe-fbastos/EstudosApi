@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace EstudosApi.Models
@@ -11,12 +12,15 @@ namespace EstudosApi.Models
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Cpf { get; set; }
-        public DateTime DtaNascimento { get; set; }
-       // public List<Matricula> Matricula { get; set; } = new List<Matricula>();
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
+        public DateTime? DtaNascimento { get; set; }
+        public List<Matricula> Matricula { get; set; } = new List<Matricula>();
+        public double? Latitude { get; set; }
+        public double? Longitude { get; set; }
         public string? Email { get; set; }
+        
+        [JsonIgnore]
         public byte[]? PasswordHash { get; set; }
+        [JsonIgnore]
         public byte[]? PasswordSalt { get; set; }
 
         [NotMapped]
