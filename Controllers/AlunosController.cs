@@ -30,15 +30,19 @@ namespace EstudosApi.Controllers
 
         [HttpGet("GetAll")]
 
-        public IActionResult GetAll(){
+        public async Task<List<Aluno>> GetAll (){
 
-            return Ok(alunos);
+           // return Ok(alunos);
+            return await _context.TB_ALUNOS.ToListAsync();
+
         }
 
         [HttpGet("{id}")]
-        public IActionResult  GetSingle(int id){
+        public async Task<ActionResult<Aluno>>  GetSingle(int id){
 
-            return Ok (alunos.FirstOrDefault(pe => pe.Id == id));
+            //return Ok (alunos.FirstOrDefault(pe => pe.Id == id));
+
+            return Ok (await _context.TB_ALUNOS.FindAsync(id));
         }
 
 
