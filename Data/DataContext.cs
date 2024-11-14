@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using EstudosApi.Models;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace EstudosApi.Data
 {
     public class DataContext : DbContext

@@ -59,7 +59,7 @@ namespace EstudosApi.Controllers
 
         [HttpPost("SignUp")]
 
-        public async Task<IActionResult> LoginAluno(Aluno aluno){
+        public async Task<IActionResult> Aluno(Aluno aluno){
 
             try{
 
@@ -81,8 +81,41 @@ namespace EstudosApi.Controllers
 
             }
             catch(System.Exception ex){
-                return BadRequest(ex.Message);
+                return BadRequest(ex.Message + ex.InnerException);
             }
+        }
+
+        [HttpPost("Login")]
+        public async Task<IActionResult> LoginAluno(Aluno credenciais)
+        {
+            try
+            {
+                Aluno aluno = await _context.TB_ALUNOS
+                   .FirstOrDefaultAsync(Busca => Busca.Nome.ToLower().Equals(credenciais.Nome.ToLower()));
+
+                if (aluno == null)
+                {
+                    throw new System.Exception("Usuário não encontrado.");
+                }
+                else if (!Criptografia.VerificarPasswordHash(credenciais.PassowordString, aluno.PasswordHash, aluno.PasswordSalt))
+                {
+                    throw new System.Exception("Senha incorreta.");
+                }
+                else
+                {
+
+                    aluno.DtaAcesso = DateTime.Now;
+
+                    await _context.SaveChangesAsync();
+
+                    return Ok($"Aluno encontrado {aluno}");
+                }
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message + " - " + ex.InnerException);
+            }
+
         }
     }
 }

@@ -1,0 +1,25 @@
+﻿BEGIN TRANSACTION;
+GO
+
+ALTER TABLE [TB_ALUNOS] ADD [DtaAcesso] datetime2 NULL;
+GO
+
+UPDATE [TB_ALUNOS] SET [DtaAcesso] = NULL
+WHERE [Id] = 1;
+SELECT @@ROWCOUNT;
+
+GO
+
+UPDATE [TB_ALUNOS] SET [DtaAcesso] = NULL
+WHERE [Id] = 2;
+SELECT @@ROWCOUNT;
+
+GO
+
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20241114001816_Correcao', N'8.0.10');
+GO
+
+COMMIT;
+GO
+

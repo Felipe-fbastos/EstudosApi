@@ -17,6 +17,8 @@ namespace EstudosApi.Models
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
         public string? Email { get; set; }
+
+         public DateTime? DtaAcesso { get; set; }
         
         [JsonIgnore]
         public byte[]? PasswordHash { get; set; }
