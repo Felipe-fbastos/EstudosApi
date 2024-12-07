@@ -19,6 +19,8 @@ namespace EstudosApi.Models
         public byte[]? PasswordHash { get; set; }
         public byte[]? PasswordSalt { get; set; }
 
+        public DateTime? DtaAcesso { get; set; }
+
         [NotMapped]
         public string? PassowordString { get; set; }
         

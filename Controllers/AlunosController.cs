@@ -7,7 +7,7 @@ using EstudosApi.Models;
 using EstudosApi.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
+
 
 namespace EstudosApi.Controllers
 {
@@ -15,12 +15,7 @@ namespace EstudosApi.Controllers
     [Route("[controller]")]
     public class AlunosController : ControllerBase
     {
-        private static List<Aluno> alunos = new List<Aluno>(){
-            new Aluno(){Id=1,Nome="Felipe", Cpf="12345678911"},
-            new Aluno(){Id=2,Nome="Rebecca", Cpf="12345678917"}
-        };
-
-        
+             
         private readonly DataContext _context;
 
         public AlunosController(DataContext context){
@@ -56,9 +51,6 @@ namespace EstudosApi.Controllers
                 return false;
             }
         }
-
-
-
 
 
         [HttpPost("SignUp")]

@@ -73,7 +73,12 @@ namespace EstudosApi.Data
             
         }
 
-            
+        internal async Task SaveChangesAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+
 
         /*public DataContext(DbContextOptions<DataContext> opitions) : base(opitions)
         {

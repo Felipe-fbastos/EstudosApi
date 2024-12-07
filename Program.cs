@@ -1,5 +1,7 @@
 using EstudosApi.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+
 
 
 
@@ -7,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<DataContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoETEC"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoSomee"));
 });
 
 // Add services to the container.
@@ -22,7 +24,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    object value = app.UseSwaggerUI();
     
 }
 
